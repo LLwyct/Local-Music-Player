@@ -1,0 +1,73 @@
+a {
+    text-decoration: none;
+}
+
+.btn {
+    font-family: '微软雅黑';
+    padding: 3px 10px;
+    border: none;
+    cursor: pointer;
+    outline: 0px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-large {
+    font-size: 16px;
+}
+.btn-2x {
+    font-size: 26px;
+}
+.btn-3x {
+    font-size: 40px;
+}
+.btn-4x {
+    font-size: 52px;
+}
+
+.btn-default {
+    background-color: white;
+    color: black;
+}
+
+.btn-default:hover {
+    background-color: #cfcfcf;
+    transition: .5s;
+}
+
+.btn-primary {
+    background-color: #20a0ff;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #298ed9;
+    transition: .5s;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #b44b47;
+    transition: .5s;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    color: white;
+}
+.btn-warning:hover {
+    background-color: #c28d41;
+    transition: .5s;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    color: white;
+}
+.btn-success:hover {
+    background-color: #52a252;
+    transition: .5s;
+}

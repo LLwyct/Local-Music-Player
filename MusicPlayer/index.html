@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title></title>
+        <link rel="stylesheet" href="./css/button.css">
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="head">
+                <h1 class="title">Music Player</h1>
+                <!-- <div class="nonetitle">
+                    <div class="searchcnt">
+                        <div class="searchbox">
+                            <input type="text" name="" value="" placeholder="搜索本地歌曲...">
+                            <button type="button"class="btn btn-default">find</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="midbody">
+                <div class="leftsidebar">
+                    <songlist-manager></songlist-manager>
+                    <div v-for="(row, index) in songlist">
+                        <songlist :name="row" :index="index"></songlist>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="songlistcontrol">
+                        <div>
+                            <h2>{{songlist[nowshowsonglistindex]}}</h2>
+                            <p v-if="nowplaying.state">正在播放第{{nowplaying.index+1}}首歌曲{{songs[nowsonglistindex].content[nowplaying.index].name | min_text_length}}</p>
+                        </div>
+                        <!-- <a href="" class="btn btn-primary">
+                            <img src="./img/play.svg" alt="">
+                            播放全部
+                        </a> -->
+                        <button type="button" class="btn btn-primary" @click="import_songs">导入歌曲</button>
+                    </div>
+                    <div class="tabelheader" @dbclick="play">
+                        <div class="musicno">序号</div>
+                        <div class="musicname">歌曲名称</div>
+                        <div class="musicsinger">演唱者</div>
+                        <div class="musictime">时长</div>
+                    </div>
+                    <div class="maincontent" v-if="songlist.length != 0">
+                        <div class="musiclist" v-for="(item, index) in songs[nowshowsonglistindex].content">
+                            <div class="musicitem" @dblclick="play(index)">
+                                <div class="musicno">{{index+1}}</div>
+                                <div class="musicname">{{item.name | min_text_length}}</div>
+                                <div class="musicsinger">{{item.singer | min_text_length}}</div>
+                                <div class="musictime">{{item.time}}</div>
+                                <div :name="item.src" id="_music" style="display:none"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <playcontrol></playcontrol>
+                </div>
+            </div>
+        </div>
+        <script src="./js/vue.js"></script>
+        <script src="./render-process/IO.js"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

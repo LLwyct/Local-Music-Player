@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+input {
+    outline: none;
+
+}
+input[type="range"]{
+    -webkit-appearance: none;
+    background-color: #dcdcdc;
+    height:5px;
+    padding: 0;
+    border: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    transform: translateY(0px);
+    background-color: white;
+    border-radius: 15px;
+    border: 5px solid #13227a;
+}
+.hidden{
+    visibility: hidden;
+}
+/*-----------------------------*/
+
+@border-color: #dcdcdc;
+@gray-background-color: #fafafa;
+
+/*-----------------------------*/
+#app{
+    height: 710px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dadada;
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+/* 顶部Logo及搜索框等 */
+.head{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 5px;
+    background-color: #8ea4b9;
+    border-bottom: 1px solid @border-color;
+
+    .title {
+        padding: 5px;
+        display: flex;
+        flex: 1;
+        min-width: 210px;
+        color: white;
+    }
+}
+
+.nonetitle{
+    padding: 5px;
+    display: flex;
+    flex: 4;
+    flex-direction: row-reverse;
+}
+
+.searchcnt{
+    display: flex;
+    width: 30%;
+    background-color: @gray-background-color;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.head  .searchbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbox input{
+    border: none;
+    height: 100%;
+    width: 100%;
+    background-color: @gray-background-color;
+}
+.searchbox button{
+    background-color: @gray-background-color;
+}
+
+
+/* 中间的主体包括左边的一个侧边栏以及右边的主View */
+.midbody{
+    display: flex;
+    flex-direction: row;
+    flex: 10;
+}
+
+    /* 左侧边栏 */
+.leftsidebar{
+    background-color: @gray-background-color;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 5px 5px;
+    min-width: 100px;
+    color: #6f6f6f;
+    border-right: 1px solid @border-color;
+}
+
+/* 歌单管理窗体 */
+
+/* 歌单管理窗体中的按钮 主要有新增歌单和删除歌单 */
+.managebox{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    button{
+        font-size: 20px;
+        font-weight: bold;
+        background-color: @gray-background-color;
+    }
+    input{
+        overflow-x: hidden;
+        margin-left: 5px;
+    }
+    .btngroup{
+        display: flex;
+    }
+}
+
+
+
+/* 歌单 */
+.songlist{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+        background-color: @gray-background-color*0.95;
+        cursor: pointer;
+    }
+}
+
+.deletebtn{
+    img{
+        width: 15px;
+        height: 15px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+/* 应用内容分为应用主题和底部的控制板 */
+.content{
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+
+/* 应用最主要的部分 */
+.maincontent{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    overflow-y: scroll;
+}
+
+/* 当前选择的歌单名称 */
+.songlistcontrol{
+    display: flex;
+    padding: 15px 5px;
+    border-bottom: 1px solid @border-color;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    div{
+        display: flex;
+        align-items: baseline;
+    }
+    img{
+       width: 20px;
+       height: 20px;
+    }
+    p{
+        color: #8d8d8d;
+        margin-left: 10px;
+    }
+    button {
+
+    }
+}
+
+.tabelheader{
+    display: flex;
+    text-align: center;
+    padding: 5px;
+    div{
+        padding-left: 5px;
+        &:hover{
+            background-color: @gray-background-color*0.95;
+        }
+    }
+    .musicno{
+        flex: 1;
+        display: flex;
+    }
+    .musicname{
+        flex: 9;
+        display: flex;
+    }
+    .musicsinger{
+        flex: 3;
+        display: flex;
+    }
+    .musictime{
+        flex: 2;
+        display: flex;
+    }
+}
+
+.musiclist .musicitem:nth-child(even){
+    background-color: @gray-background-color;
+    &:hover{
+        background-color: @gray-background-color*0.95;
+    }
+}
+
+/* 每一首歌 */
+.musicitem{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    div{
+        padding-left: 5px;
+    }
+    .musicno{
+        flex: 1;
+        display: flex;
+    }
+    .musicname{
+        flex: 9;
+        display: flex;
+    }
+    .musicsinger{
+        flex: 3;
+        display: flex;
+    }
+    .musictime{
+        flex: 2;
+        display: flex;
+    }
+    &:hover {
+        background-color: @gray-background-color*0.95;
+        cursor: pointer;
+    }
+}
+
+
+
+/* 底部控制面板 */
+.controlbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    // border-bottom: 1px solid #dcdcdc;
+    // border-left: 1px solid #dcdcdc;
+    // border-right: 1px solid #dcdcdc;
+}
+
+.controlboxgroup{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.controlboxbtn{
+    margin: 3px 3px;
+    padding: 3px;
+    border-radius: 5px;
+    &:hover {
+        background-color: @gray-background-color*0.95;
+
+    }
+    img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.progressbar{
+    display: flex;
+    flex: 6;
+    justify-content: center;
+}
+
+.progressbar progress{
+    width: 100%;
+}

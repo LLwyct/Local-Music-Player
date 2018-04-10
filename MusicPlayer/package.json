@@ -1,0 +1,22 @@
+{
+  "name": "local music player",
+  "version": "0.0.9",
+  "description": "A minimal Electron application for local music",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/liwenchi123000/",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "liwenchi",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.8.2"
+  }
+}
