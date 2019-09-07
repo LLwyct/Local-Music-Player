@@ -1,4 +1,6 @@
 ﻿# Local Music Player
+ 
+![](https://img.shields.io/github/repo-size/liwenchi123000/Local-Music-Player)
 
 **基于Vue和Electron的本地桌面音乐播放器**
 
